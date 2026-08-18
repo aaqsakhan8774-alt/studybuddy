@@ -1,0 +1,269 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: #0f1420;
+  color: #e6e9ef;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.auth-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 380px;
+  background: #171d2c;
+  border: 1px solid #262e42;
+  border-radius: 12px;
+  padding: 32px;
+  text-align: center;
+}
+
+.auth-card h1 {
+  margin: 0 0 4px;
+  color: #7c9cff;
+}
+
+.subtitle {
+  color: #9aa4bb;
+  margin: 0 0 24px;
+  font-size: 14px;
+}
+
+.auth-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.auth-card input,
+.note-form textarea {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #2c344a;
+  background: #0f1420;
+  color: #e6e9ef;
+  font-size: 14px;
+}
+
+.auth-card button[type='submit'],
+.inline-form button,
+.note-form button {
+  padding: 10px 12px;
+  border: none;
+  border-radius: 8px;
+  background: #4f6df5;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.auth-card button[type='submit']:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.error {
+  color: #ff6b6b;
+  font-size: 13px;
+  margin: 0;
+}
+
+.link-btn {
+  margin-top: 16px;
+  background: none;
+  border: none;
+  color: #7c9cff;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.dashboard {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 20px 60px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.topbar h1 {
+  color: #7c9cff;
+  margin: 0;
+  font-size: 22px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: #9aa4bb;
+}
+
+.logout-btn {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid #2c344a;
+  background: transparent;
+  color: #e6e9ef;
+  cursor: pointer;
+}
+
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.tabs button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid #262e42;
+  background: #171d2c;
+  color: #9aa4bb;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.tabs button.active {
+  background: #4f6df5;
+  color: #fff;
+  border-color: #4f6df5;
+}
+
+.panel {
+  background: #171d2c;
+  border: 1px solid #262e42;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.inline-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.inline-form input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #2c344a;
+  background: #0f1420;
+  color: #e6e9ef;
+}
+
+.note-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.note-form input {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #2c344a;
+  background: #0f1420;
+  color: #e6e9ef;
+}
+
+.empty,
+.loading {
+  color: #9aa4bb;
+  font-size: 14px;
+}
+
+.task-list,
+.note-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  background: #0f1420;
+  border: 1px solid #262e42;
+  border-radius: 8px;
+}
+
+.task-title {
+  flex: 1;
+  font-size: 14px;
+}
+
+.status-pill {
+  border: none;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.status-pill.status-todo {
+  background: #5c6470;
+}
+
+.status-pill.status-in-progress {
+  background: #d9a441;
+}
+
+.status-pill.status-done {
+  background: #3fb571;
+}
+
+.delete-btn {
+  border: none;
+  background: transparent;
+  color: #ff6b6b;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.note-item {
+  padding: 12px;
+  background: #0f1420;
+  border: 1px solid #262e42;
+  border-radius: 8px;
+}
+
+.note-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.note-content {
+  margin: 0;
+  color: #b9c0d4;
+  font-size: 14px;
+  white-space: pre-wrap;
+}
