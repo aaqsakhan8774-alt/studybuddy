@@ -6,7 +6,16 @@ const router = express.Router();
 router.use(requireAuth);
 
 router.get('/', async (req, res) => {
-  const tasks = await Task.find({ user: req.userId }).sort({ createdAt: -1 });
+  const { status } = req.query;
+  const filter = { user: req.userId };
+  if (status) {
+    if (!['todo', 'in-progress', 'done'].includes(status)) {
+      return res.status(400).json({ error: 'status must be one of: todo, in-progress, done' });
+    }
+    filter.status = status;
+  }
+
+  const tasks = await Task.find(filter).sort({ createdAt: -1 });
   res.json(tasks);
 });
 
